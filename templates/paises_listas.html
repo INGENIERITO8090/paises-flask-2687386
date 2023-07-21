@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+        integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {%if dato %}
+    <h1>Lista de
+        de la región {{dato}} </h1>
+    {%else%}
+    <h1>
+        <p>Bienvenido</p>
+    </h1>
+    {%endif%}
+    <h2>lista de paises {{paises}} </h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Continente</th>
+                <th> Pais</th>
+                <th>Capital</th>
+                <th>Moneda</th>
+                <th>Poblacion</th>
+              <th>Superficie</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            {% for continente in continentes %}
+                    <tr>
+                        <td>
+                            {{ continente.nombre }}
+                        </td>
+                    </tr>
+                    {% for continente in continentes %}
+                    {% for continente in pais %}
+
+                        <tr>
+                            <td >{{ pais.nombre }}</td>
+                        </tr>
+
+                        {% endfor %}
+
+            {% endfor %}
+                        
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
